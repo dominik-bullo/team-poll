@@ -1,66 +1,88 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  color: #252525;
-}
-
-nav {
+.avatar {
+  height: 50px;
+  border-radius: 50%;
   margin: 10px;
 }
-.nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
+
+.avatar-lg {
+  height: 150px;
+  border-radius: 50%;
+  margin: 30px 10px 10px 10px;
 }
 
-.nav li:first-child {
-  padding-left: 0;
+.btn-small {
+  font-size: 70%;
 }
 
-ul {
-  padding-left: 0;
-}
-
-li {
-  list-style-type: none;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.questions {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-decoration: none;
-}
-
-.questions-category {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
-}
-
-.card-list {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  text-decoration: none;
+.dashboard {
+  margin-bottom: 30px;
+  padding: 0.5%;
+  justify-content: center;
 }
 
 .card {
-  border: 1px solid rgba(0, 0, 0, 0.29);
-  max-width: 300px;
+  background: rgb(203, 226, 233);
+  /* max-width: 400px; */
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgb(70, 109, 147);
+}
+
+.card-section {
+  grid-gap: 1em;
+  justify-content: center;
 }
 
 .center {
   text-align: center;
+}
+
+.leaderboard {
+  justify-content: center;
+}
+
+.login {
+  justify-content: center;
+}
+
+.logo {
+  max-height: 300px;
+  border-radius: 50%;
+  margin: 50px;
+}
+
+.menu-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+nav {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav-user {
+  justify-content: end;
+}
+
+.section-container {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.title {
+  /* font-size: 1.5em; */
+  font-weight: bold;
+}
+
+.voted {
+  background: rgb(28, 184, 65);
+}
+
+.x-margin {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

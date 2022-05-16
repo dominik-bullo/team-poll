@@ -1,12 +1,37 @@
 import { connect } from "react-redux";
+import { useState } from "react";
 import Question from "./Question";
 import CardSection from "./CardSection";
 
 const Questions = (props) => {
+  const [selectedTab, setSelectedTab] = useState("");
+  const handleChange = (e) => {
+    setSelectedTab(e.target.value);
+  };
+
   return (
-    <div className="container">
-      <CardSection cardName="New Questions" ids={props.openQuestionIds} />
-      <CardSection cardName="Done" ids={props.answeredQuestionIds} />
+    <div className="pure-g dashboard">
+      <div className="pure-u">
+        <label htmlFor="tab-select">Show:</label>
+        <select
+          name="userInput"
+          id="selectTab"
+          value={selectedTab}
+          onChange={handleChange}
+        >
+          <option disabled value="">
+            - select -
+          </option>
+          <option value={"open"}>open</option>
+          <option value={"done"}>answered</option>
+        </select>
+      </div>
+      {selectedTab !== "done" ? (
+        <CardSection cardName="New Questions" ids={props.openQuestionIds} />
+      ) : null}
+      {selectedTab !== "open" ? (
+        <CardSection cardName="Done" ids={props.answeredQuestionIds} />
+      ) : null}
     </div>
   );
 };

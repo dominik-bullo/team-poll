@@ -1,4 +1,4 @@
-// import "./index.css";
+import "./index.css";
 // import "https://unpkg.com/purecss@2.1.0/build/pure-min.css";
 import React from "react";
 import ReactDOM from "react-dom/client";

@@ -3,22 +3,16 @@ import Card from "./Card";
 
 const CardSection = (props) => {
   return (
-    <div className="card-section">
-      <h3 className="center">{props.cardName}</h3>
-      <ul className="card-list">
+    <div className="pure-u-1 center section-container">
+      <h3>{props.cardName}</h3>
+      <div className="pure-g card-section">
         {props.ids.map((id) => (
           <Card key={id} id={id} />
-          //   <span>Hi There</span>
         ))}
-      </ul>
+        {props.ids.length === 0 && <p className="pure-u">No questions left!</p>}
+      </div>
     </div>
   );
-};
-
-const mapStateToProps = ({ ids }) => {
-  return {
-    ids,
-  };
 };
 
 export default connect()(CardSection);
