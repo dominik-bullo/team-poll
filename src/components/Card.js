@@ -2,15 +2,7 @@ import { connect } from "react-redux";
 import { formatDate } from "../utils/helper";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({
-  id,
-  author,
-  optionOne,
-  optionTwo,
-  authedUser,
-  hasVoted,
-  timestamp,
-}) => {
+const Card = ({ id, author, timestamp }) => {
   const navigate = useNavigate();
   const handleClick = (e) => {
     e.preventDefault();
@@ -34,21 +26,11 @@ const Card = ({
 const mapStateToProps = ({ authedUser, users, questions }, { id }) => {
   const question = questions[id];
   const author = users[question.author].id;
-  const optionOne = question.optionOne;
-  const optionTwo = question.optionTwo;
   const timestamp = formatDate(question.timestamp);
-
-  const hasVoted =
-    optionOne.votes.includes(authedUser) ||
-    optionTwo.votes.includes(authedUser);
 
   return {
     id,
     author,
-    optionOne,
-    optionTwo,
-    authedUser,
-    hasVoted,
     timestamp,
   };
 };
