@@ -4,7 +4,10 @@ const Leaderboard = (props) => {
   return (
     <div className="pure-g leaderboard">
       <h1 className="pure-u-1 center">Leaderboard</h1>
-      <table className="pure-u pure-table pure-table-striped">
+      <table
+        className="pure-u pure-table pure-table-striped"
+        data-testid="leaderboard-table"
+      >
         <thead>
           <tr>
             <th>#</th>

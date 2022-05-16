@@ -16,7 +16,7 @@ const Login = ({ users, dispatch }) => {
   };
 
   return (
-    <div className="pure-g login">
+    <div className="pure-g login" data-testid="login">
       <img className="logo" src="letsvote.png" alt="vote" />
       <h1 className="pure-u-1 center">Login</h1>
       <form
@@ -30,6 +30,7 @@ const Login = ({ users, dispatch }) => {
           id="userInput"
           value={userId}
           onChange={handleChange}
+          data-testid="user-select"
         >
           <option disabled value="">
             Select user
@@ -44,6 +45,7 @@ const Login = ({ users, dispatch }) => {
           type="submit"
           disabled={userId === ""}
           className="pure-button pure-button-primary"
+          data-testid="login-button"
         >
           Login
         </button>

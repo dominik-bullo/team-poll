@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateQuestion (component) matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pure-u-1 new-question center"
+  >
+    <h2>
+      New Question
+    </h2>
+    <h3>
+      Would you rather...
+    </h3>
+    <form
+      class="pure-form"
+    >
+      <fieldset>
+        <div
+          class="pure-control-group"
+        >
+          <label
+            for="optOne"
+          >
+            Option 1: 
+          </label>
+          <input
+            class="pure-input-2-3"
+            data-testid="option-one"
+            id="optOne"
+            placeholder="Type your first option here..."
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="pure-control-group x-margin"
+        >
+          <label
+            for="optTwo"
+          >
+            Option 2: 
+          </label>
+          <input
+            class="pure-input-2-3"
+            data-testid="option-two"
+            id="optTwo"
+            placeholder="Type your second option here..."
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="pure-controls"
+        >
+          <button
+            class="pure-button pure-button-primary"
+            data-testid="submit-button"
+            disabled=""
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</DocumentFragment>
+`;

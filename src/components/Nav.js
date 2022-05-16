@@ -11,7 +11,7 @@ const Nav = ({ authedUser, users, dispatch }) => {
   };
 
   return (
-    <nav className="header">
+    <nav className="header" data-testid="navbar">
       <div className="pure-menu pure-menu-horizontal">
         <div className="pure-u-2-3">
           <div className="pure-menu-heading title">Team Poll</div>

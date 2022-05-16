@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import { useState } from "react";
-import Question from "./Question";
 import CardSection from "./CardSection";
 
 const Questions = (props) => {
@@ -10,7 +9,7 @@ const Questions = (props) => {
   };
 
   return (
-    <div className="pure-g dashboard">
+    <div className="pure-g dashboard" data-testid="dashboard">
       <div className="pure-u">
         <label htmlFor="tab-select">Show:</label>
         <select

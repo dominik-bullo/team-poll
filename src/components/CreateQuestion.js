@@ -39,6 +39,7 @@ const CreateQuestion = ({ id, dispatch }) => {
               value={options[0]}
               onChange={handleChange(0)}
               placeholder="Type your first option here..."
+              data-testid="option-one"
             />
           </div>
           <div className="pure-control-group x-margin">
@@ -50,6 +51,7 @@ const CreateQuestion = ({ id, dispatch }) => {
               value={options[1]}
               onChange={handleChange(1)}
               placeholder="Type your second option here..."
+              data-testid="option-two"
             />
           </div>
           <div className="pure-controls">
@@ -57,6 +59,7 @@ const CreateQuestion = ({ id, dispatch }) => {
               className="pure-button pure-button-primary"
               disabled={options.includes("")}
               type="submit"
+              data-testid="submit-button"
             >
               Submit
             </button>
