@@ -11,9 +11,10 @@ import Leaderboard from "./Leaderboard";
 import Login from "./Login";
 
 function App(props) {
+  const { dispatch } = props;
   useEffect(() => {
-    props.dispatch(handleInitialData());
-  }, []);
+    dispatch(handleInitialData());
+  }, [dispatch]);
 
   return (
     <>

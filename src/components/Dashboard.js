@@ -3,7 +3,7 @@ import { useState } from "react";
 import CardSection from "./CardSection";
 
 const Questions = (props) => {
-  const [selectedTab, setSelectedTab] = useState("");
+  const [selectedTab, setSelectedTab] = useState("open");
   const handleChange = (e) => {
     setSelectedTab(e.target.value);
   };
@@ -21,8 +21,8 @@ const Questions = (props) => {
           <option disabled value="">
             - select -
           </option>
-          <option value={"open"}>open</option>
-          <option value={"done"}>answered</option>
+          <option value={"open"}>open polls</option>
+          <option value={"done"}>answered polls</option>
         </select>
       </div>
       {selectedTab !== "done" ? (
