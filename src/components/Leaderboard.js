@@ -13,7 +13,7 @@ import { Typography } from "@mui/material";
 const Leaderboard = (props) => {
   return (
     <Box>
-      <Typography align="center" variant="h4" mb={2}>
+      <Typography align="center" variant="h5" component="h2" mb={2}>
         Leaderboard
       </Typography>
       <TableContainer component={Paper}>
