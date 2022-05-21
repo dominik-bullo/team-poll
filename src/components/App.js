@@ -9,6 +9,8 @@ import Question from "./Question";
 import CreateQuestion from "./CreateQuestion";
 import Leaderboard from "./Leaderboard";
 import Login from "./Login";
+import { Box } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 
 function App(props) {
   const { dispatch } = props;
@@ -18,18 +20,24 @@ function App(props) {
 
   return (
     <>
+      <CssBaseline />
       {props.loading === true ? null : <Nav />}
-      <LoadingBar />
+      <LoadingBar style={{ backgroundColor: "blue", height: "4px" }} />
       {props.loading !== true ? null : <Login />}
-      {props.loading === true ? null : (
-        <Routes>
-          <Route path="*" element={<p className="center">404 Not Found!</p>} />
-          <Route path="/" exact element={<Dashboard />} />
-          <Route path="/add" exact element={<CreateQuestion />} />
-          <Route path="/leaderboard" exact element={<Leaderboard />} />
-          <Route path="/questions/:id" element={<Question />} />
-        </Routes>
-      )}
+      <Box maxWidth={1100} mx="auto" mt={4}>
+        {props.loading === true ? null : (
+          <Routes>
+            <Route
+              path="*"
+              element={<p className="center">404 Not Found!</p>}
+            />
+            <Route path="/" exact element={<Dashboard />} />
+            <Route path="/add" exact element={<CreateQuestion />} />
+            <Route path="/leaderboard" exact element={<Leaderboard />} />
+            <Route path="/questions/:id" element={<Question />} />
+          </Routes>
+        )}
+      </Box>
     </>
   );
 }

@@ -1,6 +1,9 @@
 import { connect } from "react-redux";
 import { useState } from "react";
 import CardSection from "./CardSection";
+import Box from "@mui/material/Box";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
 const Questions = (props) => {
   const [selectedTab, setSelectedTab] = useState("open");
@@ -9,24 +12,21 @@ const Questions = (props) => {
   };
 
   return (
-    <div className="pure-g dashboard" data-testid="dashboard">
-      <div className="pure-u">
-        <label htmlFor="tab-select">Show:</label>
-        <select
-          name="userInput"
-          id="selectTab"
+    <div>
+      <Box display="flex" justifyContent="center" my={2}>
+        <ToggleButtonGroup
+          size="small"
+          color="primary"
           value={selectedTab}
+          exclusive
           onChange={handleChange}
         >
-          <option disabled value="">
-            - select -
-          </option>
-          <option value={"open"}>open polls</option>
-          <option value={"done"}>answered polls</option>
-        </select>
-      </div>
+          <ToggleButton value="open">Open</ToggleButton>
+          <ToggleButton value="done">Done</ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
       {selectedTab !== "done" ? (
-        <CardSection cardName="New Questions" ids={props.openQuestionIds} />
+        <CardSection cardName="Open Questions" ids={props.openQuestionIds} />
       ) : null}
       {selectedTab !== "open" ? (
         <CardSection cardName="Done" ids={props.answeredQuestionIds} />

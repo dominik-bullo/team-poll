@@ -1,41 +1,48 @@
 import { connect } from "react-redux";
+import { Box } from "@mui/material";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import Avatar from "@mui/material/Avatar";
+import { Typography } from "@mui/material";
 
 const Leaderboard = (props) => {
   return (
-    <div className="pure-g leaderboard">
-      <h1 className="pure-u-1 center">Leaderboard</h1>
-      <table
-        className="pure-u pure-table pure-table-striped"
-        data-testid="leaderboard-table"
-      >
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Avatar</th>
-            <th>User</th>
-            <th>Answered</th>
-            <th>Created</th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.userObjects.map((user, index) => (
-            <tr key={user.id}>
-              <td>{index + 1}</td>
-              <td>
-                <img
-                  src={user.avatarURL}
-                  className="avatar"
-                  alt={`${user.name}'s avatar`}
-                />
-              </td>
-              <td>{user.name}</td>
-              <td>{user.answered}</td>
-              <td>{user.created}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Box>
+      <Typography align="center" variant="h4" mb={2}>
+        Leaderboard
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>#</TableCell>
+              <TableCell>Avatar</TableCell>
+              <TableCell>User</TableCell>
+              <TableCell>Answered</TableCell>
+              <TableCell>Created</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {props.userObjects.map((user, index) => (
+              <TableRow key={user.id}>
+                <TableCell>{index + 1}</TableCell>
+                <TableCell>
+                  <Avatar src={user.avatarURL} alt={`${user.name}'s avatar`} />
+                </TableCell>
+                <TableCell>{user.name}</TableCell>
+                <TableCell>{user.answered}</TableCell>
+                <TableCell>{user.created}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </Box>
   );
 };
 

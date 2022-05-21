@@ -1,17 +1,27 @@
 import { connect } from "react-redux";
-import Card from "./Card";
+import CardComp from "./CardComp";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 const CardSection = (props) => {
   return (
-    <div className="pure-u-1 center section-container">
-      <h3>{props.cardName}</h3>
-      <div className="pure-g card-section">
+    <Box sx={{ mb: "2" }}>
+      <Typography align="center" variant="h5" component="h2">
+        {props.cardName}
+      </Typography>
+      <Box
+        sx={{ display: "flex", flexWrap: "wrap", justifyContent: "flex-start" }}
+      >
         {props.ids.map((id) => (
-          <Card key={id} id={id} />
+          <CardComp key={id} id={id} />
         ))}
-        {props.ids.length === 0 && <p className="pure-u">No questions left!</p>}
-      </div>
-    </div>
+      </Box>
+      {props.ids.length === 0 && (
+        <Typography align="center" component="p" mt={2}>
+          No questions left!
+        </Typography>
+      )}
+    </Box>
   );
 };
 

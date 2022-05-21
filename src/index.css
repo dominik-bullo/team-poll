@@ -1,4 +1,4 @@
-.avatar {
+/* .avatar {
   height: 50px;
   border-radius: 50%;
   margin: 10px;
@@ -22,7 +22,6 @@
 
 .card {
   background: rgb(203, 226, 233);
-  /* max-width: 400px; */
   padding: 5px;
   border-radius: 5px;
   border: 1px solid rgb(70, 109, 147);
@@ -74,7 +73,6 @@ nav {
 }
 
 .title {
-  /* font-size: 1.5em; */
   font-weight: bold;
 }
 
@@ -85,4 +83,4 @@ nav {
 .x-margin {
   margin-top: 20px;
   margin-bottom: 20px;
-}
+} */
